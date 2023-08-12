@@ -73,8 +73,6 @@ function moveLift(lift, targetFloor) {
         return;
     }
 
-    lift.textContent = `Lift ${liftId} [${liftFloor} -> ${targetFloor}]`;
-    setTimeout(() => {
-        
-    }, Math.abs(targetFloor - liftFloor) * 1000); 
+    
+    , Math.abs(targetFloor - liftFloor) * 1000); 
 }

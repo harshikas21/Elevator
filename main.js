@@ -75,7 +75,6 @@ function moveLift(lift, targetFloor) {
 
     lift.textContent = `Lift ${liftId} [${liftFloor} -> ${targetFloor}]`;
     setTimeout(() => {
-        lift.dataset.currentFloor = targetFloor;
-        lift.textContent = `Lift ${liftId} [${targetFloor}]`;
+        
     }, Math.abs(targetFloor - liftFloor) * 1000); 
 }

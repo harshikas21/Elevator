@@ -1,3 +1,4 @@
+
 const floorsContainer = document.querySelector('.floors');
 const liftsContainer = document.querySelector('.lifts');
 let numFloors, numLifts;
@@ -73,6 +74,40 @@ function moveLift(lift, targetFloor) {
         return;
     }
 
+    lift.textContent = `Lift ${liftId} [${liftFloor} -> ${targetFloor}]`;
+     
+}
+
+
+
+function requestLift(floor) {
+    const lifts = document.querySelectorAll('.lift');
+    const closestLift = getClosestLift(floor, lifts);
+
+    if (closestLift) {
+        moveLift(closestLift, floor);
+    }
+}
+
+function moveLift(lift, targetFloor) {
+    const liftId = lift.dataset.id;
+    const liftElement = document.querySelector(`[data-id="${liftId}"]`);
+    const liftFloor = parseInt(lift.dataset.currentFloor);
+    const floorHeight = 200; 
+
+    if (liftFloor === targetFloor) {
+        return;
+    }
+
     
-    , Math.abs(targetFloor - liftFloor) * 1000); 
+    const distance = Math.abs(liftFloor - targetFloor) * floorHeight;
+
+    
+    liftElement.style.transform = `translateY(-${distance}px)`;
+    
+    
+    setTimeout(() => {
+        lift.dataset.currentFloor = targetFloor;
+        liftElement.style.transform = 'translateY(0)';
+    }, Math.abs(liftFloor - targetFloor) * 1000);
 }

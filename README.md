@@ -19,7 +19,7 @@ cd elevator-simulation
 
 ## How it works
 
--Open the index.html file in your web browser.
--Enter the number of floors and elevators you want to simulate.
--Click the "Create" button to generate the floors and elevator containers.
--Click on a floor button to request a lift to that floor. The closest available elevator will respond and simulate movement.
+- Open the index.html file in your web browser.
+- Enter the number of floors and elevators you want to simulate.
+- lick the "Create" button to generate the floors and elevator containers.
+- Click on a floor button to request a lift to that floor. The closest available elevator will respond and simulate movement.
